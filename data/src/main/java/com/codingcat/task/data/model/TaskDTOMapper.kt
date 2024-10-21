@@ -3,7 +3,7 @@ package com.codingcat.task.data.model
 import com.codingcat.task.domain.models.Task
 
 object TaskDTOMapper {
-    fun TaskLocal.map() = Task(
+    fun TaskLocalDto.map() = Task(
         id = id,
         title = title ?: "",
         description = description ?: "",
@@ -13,7 +13,7 @@ object TaskDTOMapper {
         endTime = endTime ?: "",
     )
 
-    fun TaskRemote.map() = Task(
+    fun TaskRemoteDto.map() = Task(
         id = id,
         title = title,
         description = description,
@@ -23,7 +23,7 @@ object TaskDTOMapper {
         endTime = endTime,
     )
 
-    fun Task.mapToLocal() = TaskLocal(
+    fun Task.mapToLocal() = TaskLocalDto(
         id = id,
         title = title,
         description = description,
@@ -33,7 +33,7 @@ object TaskDTOMapper {
         endTime = endTime,
     )
 
-    fun Task.mapToRemote() = TaskRemote(
+    fun Task.mapToRemote() = TaskRemoteDto(
         id = id,
         title = title,
         description = description,

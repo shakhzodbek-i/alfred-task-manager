@@ -4,16 +4,16 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import com.codingcat.task.data.model.TaskLocal
+import com.codingcat.task.data.model.TaskLocalDto
 
 @Dao
 interface TaskDao {
     @Query("SELECT * FROM tasks")
-    suspend fun getAllTasks(): List<TaskLocal>
+    suspend fun getAllTasks(): List<TaskLocalDto>
 
     @Upsert
-    suspend fun insertTask(task: TaskLocal)
+    suspend fun insertTask(task: TaskLocalDto)
 
     @Delete
-    suspend fun deleteTask(task: TaskLocal)
+    suspend fun deleteTask(task: TaskLocalDto)
 }

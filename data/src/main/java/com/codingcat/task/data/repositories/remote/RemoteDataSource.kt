@@ -1,16 +1,14 @@
 package com.codingcat.task.data.repositories.remote
 
-import com.codingcat.task.data.model.TaskRemote
-import com.codingcat.task.data.repositories.remote.Utils.handleResponse
+import com.codingcat.task.data.model.TaskRemoteDto
 
 class RemoteDataSource(private val api: TaskManagerApi) {
-    suspend fun getAllTasks() = api.getAllTasks().handleResponse()
+    suspend fun getAllTasks() = api.getAllTasks()
 
-    suspend fun addNewTask(newTask: TaskRemote) =
-        api.addNewTask(newTask).handleResponse()
+    suspend fun addNewTask(newTask: TaskRemoteDto) = api.addNewTask(newTask)
 
-    suspend fun deleteTaskById(id: Int) = api.deleteTaskById(id).handleResponse()
+    suspend fun deleteTaskById(id: Int) = api.deleteTaskById(id)
 
-    suspend fun updateTaskById(id: Int, updatedTask: TaskRemote) =
-        api.updateTaskById(id, updatedTask).handleResponse()
+    suspend fun updateTaskById(id: Int, updatedTask: TaskRemoteDto) =
+        api.updateTaskById(id, updatedTask)
 }

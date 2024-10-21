@@ -40,13 +40,14 @@ dependencies {
     implementation(project(":domain"))
 
     // Core libs
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
     implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.appcompat:appcompat:1.7.0")
 
     // Network
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.google.code.gson:gson:2.11.0")
+    implementation("io.arrow-kt:arrow-core:1.2.0")
+    implementation("com.github.skydoves:retrofit-adapters-arrow:1.0.12")
 
     // Local
     implementation("androidx.room:room-runtime:2.6.1")

@@ -4,10 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "tasks"
-)
-data class TaskLocal(
+@Entity(tableName = "tasks")
+data class TaskLocalDto(
     @PrimaryKey
     val id: Int,
     @ColumnInfo("title")

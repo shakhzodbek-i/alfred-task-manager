@@ -2,7 +2,7 @@ package com.codingcat.task.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class TaskRemote(
+data class TaskRemoteDto(
     @SerializedName("id")
     val id: Int,
     @SerializedName("title")
