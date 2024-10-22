@@ -40,7 +40,7 @@ dependencies {
     implementation(project(":domain"))
 
     // Core libs
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("androidx.core:core-ktx:1.13.1")
 
     // Network
@@ -68,5 +68,9 @@ dependencies {
     testImplementation("com.google.dagger:hilt-android-testing:2.52")
     kspTest("com.google.dagger:hilt-compiler:2.52")
     testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation("com.google.truth:truth:1.4.4")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
 }
