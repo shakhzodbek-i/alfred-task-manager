@@ -2,7 +2,7 @@ package com.codingcat.task.data.repositories.remote
 
 import com.codingcat.task.data.model.TaskRemoteDto
 
-class RemoteDataSource(private val api: TaskManagerApi) {
+class TasksRemoteDataSource(private val api: TaskManagerApi) {
     suspend fun getAllTasks() = api.getAllTasks()
 
     suspend fun addNewTask(newTask: TaskRemoteDto) = api.addNewTask(newTask)

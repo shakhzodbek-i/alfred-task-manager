@@ -6,5 +6,5 @@ import com.codingcat.task.data.model.TaskLocalDto
 
 @Database(entities = [TaskLocalDto::class], version = 1)
 abstract class TasksDatabase : RoomDatabase() {
-    abstract fun tasksDao(): TaskDao
+    abstract fun tasksDao(): TasksDao
 }

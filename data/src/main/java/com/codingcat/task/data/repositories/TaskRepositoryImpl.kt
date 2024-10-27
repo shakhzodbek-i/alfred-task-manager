@@ -2,18 +2,18 @@ package com.codingcat.task.data.repositories
 
 import arrow.core.Either
 import arrow.core.raise.either
-import com.codingcat.task.data.model.TaskDTOMapper.map
-import com.codingcat.task.data.model.TaskDTOMapper.mapToLocal
-import com.codingcat.task.data.model.TaskDTOMapper.mapToRemote
-import com.codingcat.task.data.repositories.local.TaskDao
-import com.codingcat.task.data.repositories.remote.RemoteDataSource
+import com.codingcat.task.data.model.map
+import com.codingcat.task.data.model.mapToLocal
+import com.codingcat.task.data.model.mapToRemote
+import com.codingcat.task.data.repositories.local.TasksDao
+import com.codingcat.task.data.repositories.remote.TasksRemoteDataSource
 import com.codingcat.task.domain.models.HttpRequestError
 import com.codingcat.task.domain.models.Task
 import com.codingcat.task.domain.repositories.TaskRepository
 
 class TaskRepositoryImpl(
-    private val localDataSource: TaskDao,
-    private val remoteDataSource: RemoteDataSource
+    private val localDataSource: TasksDao,
+    private val remoteDataSource: TasksRemoteDataSource
 ) : TaskRepository {
 
     override suspend fun getAllTasks(): Either<HttpRequestError, List<Task>> {

@@ -17,7 +17,7 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @SmallTest
-class TaskDaoTest {
+class TasksDaoTest {
 
     /**
      * Because the database manipulations normally are executed in background executor (Thread),
@@ -29,7 +29,7 @@ class TaskDaoTest {
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var database: TasksDatabase
-    private lateinit var dao: TaskDao
+    private lateinit var dao: TasksDao
 
     @Before
     fun setup() {

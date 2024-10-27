@@ -7,7 +7,7 @@ import androidx.room.Upsert
 import com.codingcat.task.data.model.TaskLocalDto
 
 @Dao
-interface TaskDao {
+interface TasksDao {
     @Query("SELECT * FROM tasks")
     suspend fun getAllTasks(): List<TaskLocalDto>
 
