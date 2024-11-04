@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
@@ -65,12 +66,23 @@ fun AlfredTaskManagerTheme(
     }
 
     CompositionLocalProvider(
-        LocalAlfredColors provides if (darkTheme) DarkColors else LightColors
+        LocalAlfredColors provides if (darkTheme) DarkColors else LightColors,
+        LocalAlfredTypography provides Typography
     ) {
         MaterialTheme(
+            shapes = shapes,
             colorScheme = colorScheme,
-            typography = Typography,
             content = content
         )
     }
+}
+
+object AlfredTheme {
+    val typography: AlfredTypography
+        @Composable
+        get() = LocalAlfredTypography.current
+
+    val colors: AlfredColors
+        @Composable
+        get() = LocalAlfredColors.current
 }
