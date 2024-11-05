@@ -15,6 +15,7 @@ data class AlfredColors(
     val gray: Color,
     val whiteGray: Color,
     val white: Color,
+    val white20p: Color,
     val red: Color,
     val black: Color
 )
@@ -29,6 +30,7 @@ val LocalAlfredColors = staticCompositionLocalOf {
         gray = Color.Unspecified,
         whiteGray = Color.Unspecified,
         white = Color.Unspecified,
+        white20p = Color.Unspecified,
         red = Color.Unspecified,
         black = Color.Unspecified
     )

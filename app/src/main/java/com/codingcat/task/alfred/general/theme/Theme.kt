@@ -24,6 +24,7 @@ private val LightColors = AlfredColors(
     gray = GrayLight,
     whiteGray = WhiteGrayLight,
     white = WhiteLight,
+    white20p = White20pLight,
     red = RedLight,
     black = BlackLight
 )
@@ -37,12 +38,13 @@ private val DarkColors = AlfredColors(
     gray = GrayDark,
     whiteGray = WhiteGrayDark,
     white = WhiteDark,
+    white20p = White20pDark,
     red = RedDark,
     black = BlackDark
 )
 
 @Composable
-fun AlfredTaskManagerTheme(
+fun AlfredTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
