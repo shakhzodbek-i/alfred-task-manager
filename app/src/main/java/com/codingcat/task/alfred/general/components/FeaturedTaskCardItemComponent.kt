@@ -34,9 +34,9 @@ fun FeaturedTaskCardItem(
         color = AlfredTheme.colors.greenGray,
         shape = RoundedCornerShape(20.dp),
         onClick = { onItemClick(itemModel.taskData) }) {
-        Column(verticalArrangement = Arrangement.SpaceBetween) {
+        Column(verticalArrangement = Arrangement.SpaceEvenly) {
             Row(
-                modifier = Modifier.padding(36.dp),
+                modifier = Modifier.padding(start = 36.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Surface(
@@ -60,15 +60,15 @@ fun FeaturedTaskCardItem(
             }
 
             Text(
-                modifier = Modifier.padding(start = 36.dp, bottom = 36.dp),
+                modifier = Modifier.padding(start = 36.dp),
                 text = itemModel.taskData.title,
                 style = AlfredTheme.typography.sb4,
                 color = AlfredTheme.colors.white
             )
 
             Text(
-                modifier = Modifier.padding(start = 36.dp, bottom = 36.dp),
-                text = itemModel.taskData.endTime,
+                modifier = Modifier.padding(start = 36.dp),
+                text = itemModel.taskData.date,
                 style = AlfredTheme.typography.lgh1,
                 color = AlfredTheme.colors.white
             )
@@ -85,10 +85,10 @@ private fun FeaturedTaskCardItemPreview() {
             itemModel = UiFeaturedTaskModel(
                 iconRes = R.drawable.ic_launcher_foreground,
                 taskData = UiTaskModel(
-                    title = "Test Title",
+                    title = "Front-End Development",
                     description = "Very Very Very long long long descriptioooooooooon",
-                    category = "Test category",
-                    date = "Test date",
+                    category = "Project 1",
+                    date = "Octobar 20, 2020",
                     startTime = "Test startTime",
                     endTime = "Test endTime"
                 )
