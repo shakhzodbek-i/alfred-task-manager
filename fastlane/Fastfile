@@ -1,0 +1,63 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+
+    FIREBASE_CLI_TOKEN = ENV["FIREBASE_CLI_TOKEN"]
+    FIREBASE_APP_ID = ENV["FIREBASE_APP_ID"]
+
+    desc "Runs all the tests"
+      lane :runTests do
+        gradle(task: "test")
+    end
+
+    desc "Get latest build version from Firebase App Distribution"
+        lane :getLatestVersionAndUpgrade do
+            latest_release = firebase_app_distribution_get_latest_release(
+                app: FIREBASE_APP_ID,
+                service_credentials_file: "/home/runner/work/FastlaneSampleProject/FastlaneSampleProject/private-decoded-key.json")
+            versionName = latest_release[:displayVersion]
+            versionNumber = latest_release[:buildVersion]
+            final_version_number = versionNumber.to_i + 1
+            versionNameArray = versionName.split(".")
+            major = versionNameArray[0]
+            minor = versionNameArray[1]
+            point = versionNameArray[2]
+            final_version_name_point = point.to_i + 1
+            final_version_name = major.to_s + "." + minor.to_s + "." + final_version_name_point.to_s
+            path = "../app/build.gradle"
+            versionCode = /versionCode\s+(\d+)/
+            versionName = /versionName\s+(\S+)/
+            s = File.read(path)
+            s[versionCode,1] = final_version_number.to_s
+            s[versionName,1] = "\"#{final_version_name}\""
+            f= File.new(path,'w')
+            f.write(s)
+            f.close
+    end
+    desc "Upload release apk on firebase app distribution"
+        lane :uploadApkToFirebase do
+            gradle(task: "assemble", build_type: "debug")
+            firebase_app_distribution(
+            app: FIREBASE_APP_ID,
+            firebase_cli_token: FIREBASE_CLI_TOKEN,
+            android_artifact_type: "APK",
+            android_artifact_path: "app/build/outputs/apk/release/app-release.apk",
+            groups: "testers"
+            )
+    end
+end
