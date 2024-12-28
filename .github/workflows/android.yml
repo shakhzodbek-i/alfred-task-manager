@@ -41,7 +41,7 @@ jobs:
         run: echo "$CREDENTIAL_FILE_CONTENT" | base64 -d > private-decoded-key.json
 
       - name: Upgrade build version
-        run: bundle exec fastlane getLatestProdVersionAndUpdate
+        run: bundle exec fastlane getLatestVersionAndUpgrade
 
       - name: Run tests
         run: bundle exec fastlane runTests
