@@ -29,7 +29,7 @@ platform :android do
         lane :getLatestVersionAndUpgrade do
             latest_release = firebase_app_distribution_get_latest_release(
                 app: FIREBASE_APP_ID,
-                service_credentials_file: "/home/runner/work/FastlaneSampleProject/FastlaneSampleProject/private-decoded-key.json")
+                service_credentials_file: "private-decoded-key.json")
             versionName = latest_release[:displayVersion]
             versionNumber = latest_release[:buildVersion]
             final_version_number = versionNumber.to_i + 1
