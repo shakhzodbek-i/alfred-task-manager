@@ -38,7 +38,7 @@ jobs:
         run: bundle exec fastlane add_plugin firebase_app_distribution
 
       - name: Generate private-decoded-key.json file
-        run: echo ${{secrets.CREDENTIAL_FILE_CONTENT}} | base64 -d base64 -d > /home/runner/work/FastlaneSampleProject/FastlaneSampleProject/private-decoded-key.json
+        run: echo ${{secrets.CREDENTIAL_FILE_CONTENT}} | base64 -d > /home/runner/work/FastlaneSampleProject/FastlaneSampleProject/private-decoded-key.json
 
       - name: Upgrade build version
         run: bundle exec fastlane getLatestProdVersionAndUpdate
