@@ -37,6 +37,9 @@ jobs:
       - name: Install Firebase App Distribution Plugin
         run: bundle exec fastlane add_plugin firebase_app_distribution
 
+      - name: Install Build version increment Plugin
+        run: bundle exec fastlane add_plugin increment_version_code
+
       - name: Generate private-decoded-key.json file
         run: echo "$CREDENTIAL_FILE_CONTENT" | base64 -d > private-decoded-key.json
 
