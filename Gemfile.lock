@@ -113,6 +113,7 @@ GEM
     fastlane-plugin-firebase_app_distribution (0.9.1)
       google-apis-firebaseappdistribution_v1 (~> 0.3.0)
       google-apis-firebaseappdistribution_v1alpha (~> 0.2.0)
+    fastlane-plugin-increment_build_number (0.0.4)
     fastlane-plugin-increment_version_code (0.4.3)
     fastlane-sirp (1.0.0)
       sysrandom (~> 1.0)
@@ -226,6 +227,7 @@ PLATFORMS
 DEPENDENCIES
   fastlane
   fastlane-plugin-firebase_app_distribution
+  fastlane-plugin-increment_build_number
   fastlane-plugin-increment_version_code
 
 BUNDLED WITH

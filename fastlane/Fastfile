@@ -18,7 +18,7 @@ default_platform(:android)
 platform :android do
 
     FIREBASE_CLI_TOKEN = ENV["FIREBASE_CLI_TOKEN"]
-    FIREBASE_APP_ID = "1:164593594321:android:7dd7c52f6fefbbae57faf0"
+    FIREBASE_APP_ID = ENV["FIREBASE_APP_ID"]
 
     desc "Runs all the tests"
       lane :runTests do
@@ -31,7 +31,7 @@ platform :android do
                 app: FIREBASE_APP_ID,
                 service_credentials_file: "private-decoded-key.json")
             buildNumber = latest_release.nil? ? 1 : latest_release[:buildVersion].to_i
-            increment_build_number({ build_number: buildNumber + 1 })
+            increment_version_code({ version_code: buildNumber + 1 })
     end
 
     desc "Upload release apk on firebase app distribution"
