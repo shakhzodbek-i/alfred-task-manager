@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "164593594321",
+    "firebase_url": "https://taskmanagerapp-b2b77-default-rtdb.firebaseio.com",
+    "project_id": "taskmanagerapp-b2b77",
+    "storage_bucket": "taskmanagerapp-b2b77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164593594321:android:7dd7c52f6fefbbae57faf0",
+        "android_client_info": {
+          "package_name": "com.codingcat.task.alfred"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPv5EHtNw5Mp2kXGjByEf01X90GcHEtR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
