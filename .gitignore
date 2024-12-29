@@ -31,3 +31,7 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Fastlane
+fastlane.README.md
+fastlane.report.xml

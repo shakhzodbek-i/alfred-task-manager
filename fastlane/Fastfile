@@ -31,6 +31,7 @@ platform :android do
                 app: FIREBASE_APP_ID,
                 service_credentials_file: "private-decoded-key.json")
             buildNumber = latest_release.nil? ? 1 : latest_release[:buildVersion].to_i
+            puts buildNumber
             increment_version_code({ version_code: buildNumber + 1 })
     end
 
