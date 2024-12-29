@@ -30,5 +30,5 @@ render.experimental.xml
 *.hprof
 
 # Fastlane
-fastlane.README.md
-fastlane.report.xml
+fastlane/README.md
+fastlane/report.xml
